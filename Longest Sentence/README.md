@@ -1,7 +1,7 @@
 # Longest Sentence
 
+- The function signature: longestSen(s)
 - Create a function that counts the highest number of words in a sentence.
-  - The function signature: longestSen(s)
     - s will be a string (not null or any other object)
     - s may be empty
     - Sentences are delimited by the following characters: ['.', '?', '!']
