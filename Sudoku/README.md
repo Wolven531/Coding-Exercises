@@ -3,13 +3,16 @@
 There are two challenges:
 
 - Given an array of arrays (example below) that represents a sudoku, determine whether or not the sudoku is valid.
+  - The function signature: validate(sudoku)
   - Each row horizontally must contain no duplicates
   - Each column vertically must contain no duplicates
   - Each box must contain no duplicates
 
 - Create a function that will generate a valid sudoku representation. The same validation rules apply as above.
 
-Example sudoku (valid):
+## Examples:
+
+Example sudoku (valid): validate(sudoku) === true
 ```javascript
 [6, 3, 9, 5, 7, 4, 1, 8, 2],
 [5, 4, 1, 8, 2, 9, 3, 7, 6],
@@ -22,7 +25,7 @@ Example sudoku (valid):
 [2, 7, 4, 3, 5, 1, 6, 9, 8]
 ```
 
-Example sudoku (invalid):
+Example sudoku (invalid): validate(sudoku) === false
 
 ```javascript
 [3, 3, 9, 5, 7, 4, 1, 8, 2],
