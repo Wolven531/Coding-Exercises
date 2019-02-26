@@ -32,11 +32,11 @@ const acro = (inputStr) => {
 	return result
 }
 
-for(const test of tests) {
+for (const test of tests) {
 	const result = acro(test.input)
 	if (result === test.expected) {
-		console.log(`%c Success for input "${test.input}"`, 'background: #0f0; color: #000')
+		console.log(`SUCCESS\n\tinput="${test.input}"\n\toutput ${result}`)
 	} else {
-		console.warn(`%c Failed test for input "${test.input}"`, 'background: #f00; color: #fff')
+		console.warn(` FAILED\n\tinput "${test.input}"\n\toutput "${result}"\n\texpected "${test.expected}"`)
 	}
 }
