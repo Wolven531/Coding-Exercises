@@ -53,25 +53,23 @@ const tests = [
 
 let failures = []
 
-for (const test of tests) {
+tests.forEach(test => {
 	const result = acro(test.input)
 
 	if (result === test.expected) {
-		continue
+		return
 	}
 	failures.push(` FAILED\n\tinput "${test.input}"\n\toutput "${result}"\n\texpected "${test.expected}"`)
-}
+})
 
 const decoration = '~'.repeat(10)
-console.log(`${decoration}  PASSES: ${tests.length - failures.length}  ${decoration}`)
-console.log(`${decoration} FAILURES: ${failures.length} ${decoration}`)
+console.log(`${decoration}      PASSES: ${tests.length - failures.length}     ${decoration}`)
+console.log(`${decoration}     FAILURES: ${failures.length}    ${decoration}`)
 
-for (const failure of failures) {
-	console.warn(failure)
-}
+failures.forEach(failure => console.warn(failure))
 
 if (failures.length > 0) {
 	return
 }
 
-console.log(`${decoration} ❤️ ALL PASSED! ❤️ ${decoration}`)
+console.log(`${decoration}  ❤️  ALL PASSED! ❤️  ${decoration}`)
