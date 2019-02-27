@@ -49,9 +49,13 @@ for (const test of tests) {
 	failures.push(` FAILED\n\tinput "${test.input}"\n\toutput "${result}"\n\texpected "${test.expected}"`)
 }
 
-console.log(`~~~~~~~~~~  PASSES: ${failedTests}  ~~~~~~~~~~`)
+const decoration = '~'.repeat(10)
+
+console.log(`${decoration}  PASSES: ${passedTests}  ${decoration}`)
+
 if (!successful) {
-	console.warn(`~~~~~~~~~~ FAILURES: ${failedTests} ~~~~~~~~~~`)
+	console.warn(`${decoration} FAILURES: ${failedTests} ${decoration}`)
+
 	for (const failure of failures) {
 		console.warn(failure)
 	}
