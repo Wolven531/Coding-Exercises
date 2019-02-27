@@ -32,11 +32,27 @@ const acro = (inputStr) => {
 	return result
 }
 
+let failures = []
+let failedTests = 0
+let passedTests = 0
+let successful = true
+
 for (const test of tests) {
 	const result = acro(test.input)
 	if (result === test.expected) {
-		console.log(`SUCCESS\n\tinput="${test.input}"\n\toutput ${result}`)
-	} else {
-		console.warn(` FAILED\n\tinput "${test.input}"\n\toutput "${result}"\n\texpected "${test.expected}"`)
+		passedTests++
+		continue
+		// console.log(`SUCCESS\n\tinput="${test.input}"\n\toutput ${result}`)
+	}
+	failedTests++
+	successful = false
+	failures.push(` FAILED\n\tinput "${test.input}"\n\toutput "${result}"\n\texpected "${test.expected}"`)
+}
+
+console.log(`~~~~~~~~~~  PASSES: ${failedTests}  ~~~~~~~~~~`)
+if (!successful) {
+	console.warn(`~~~~~~~~~~ FAILURES: ${failedTests} ~~~~~~~~~~`)
+	for (const failure of failures) {
+		console.warn(failure)
 	}
 }
