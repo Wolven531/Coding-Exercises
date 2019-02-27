@@ -1,6 +1,6 @@
 # Acronym
 
-- The function signature: acro(str)
+- The function signature: `acro(string inputStr)`
 - Create a function that [acronymizes](https://en.wiktionary.org/wiki/acronymize) a sentence
   - The following words are not to be represented in the final result: ['of', 'the', 'in', 'at', 'on', 'and', 'or', 'is', 'a', 'it']
   - Words are delimited by a space (' ')
