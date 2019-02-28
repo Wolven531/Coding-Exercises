@@ -4,6 +4,7 @@
 	"description": "A collection of coding exercises, tests, and solutions",
 	"main": "index.js",
 	"scripts": {
+		"all": "npm run acronym && npm run fibonacci",
 		"acronym": "node ./Acronym/acronym.js",
 		"fibonacci": "node ./Fibonacci/fibonacci.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
