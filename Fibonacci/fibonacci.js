@@ -1,7 +1,24 @@
 const testRunner = require('../test-runner')
 
 const fibo = digit => {
-	return 0
+	if (digit < 1) {
+		return 0
+	}
+	if (digit < 3) {
+		return 1
+	}
+
+	let num1 = 1
+	let num2 = 1
+	let sum
+
+	for (let a = 2; a < digit; a++) {
+		sum = num1 + num2
+		num1 = num2
+		num2 = sum
+	}
+
+	return sum
 }
 
 const tests = [
