@@ -1,13 +1,34 @@
 // import { printTestResults, runTests } from '../test-runner'
 const testRunner = require('../test-runner')
 
-const BANNED_WORDS = ['of', 'the', 'in', 'at', 'on', 'and', 'or', 'is', 'a', 'it']
+const BANNED_WORDS = [
+	'a',
+	'and',
+	'at',
+	'in',
+	'is',
+	'it',
+	'of',
+	'on',
+	'or',
+	'the'
+]
+const CONTRACTIONS = [
+	{
+		pattern: /it's/gi,
+		replacement: 'its'
+	}
+]
 const WORD_DELIMITER = ' '
 
 const isSafe = word => !BANNED_WORDS.includes((word || '').toLowerCase())
 
 const capitalizeThenDeAlphabetize = word => {
-	word = (word || '').trim().replace(/it's/gi, 'its')
+	word = (word || '').trim()
+
+	for (const contraction of CONTRACTIONS) {
+		word = word.replace(contraction.pattern, contraction.replacement)
+	}
 
 	if (word.length < 1) {
 		return ''
