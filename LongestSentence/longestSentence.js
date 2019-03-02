@@ -5,13 +5,10 @@ const SENTENCE_DELIMITERS = [ '.', '?', '!' ]
 const longestSen = inputStr => {
 	inputStr = (inputStr || '').trim()
 
-	if (inputStr.length < 1) {
-		return 0
-	}
-	let longestSentence = 0
 	let currentSentenceNumberWords = 0
+	let longestSentence = 0
 
-	for (const letter of inputStr) {
+	inputStr.split('').forEach(letter => {
 		if (SENTENCE_DELIMITERS.indexOf(letter) > -1) {
 			if (currentSentenceNumberWords > longestSentence) {
 				longestSentence = currentSentenceNumberWords
@@ -20,8 +17,7 @@ const longestSen = inputStr => {
 		} else if (letter === ' ') {
 			currentSentenceNumberWords++
 		}
-		
-	}
+	})
 
 	return longestSentence
 }
