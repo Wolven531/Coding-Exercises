@@ -8,8 +8,22 @@ const longestSen = inputStr => {
 	if (inputStr.length < 1) {
 		return 0
 	}
+	let longestSentence = 0
+	let currentSentenceNumberWords = 0
 
-	return 0
+	for (const letter of inputStr) {
+		if (SENTENCE_DELIMITERS.indexOf(letter) > -1) {
+			if (currentSentenceNumberWords > longestSentence) {
+				longestSentence = currentSentenceNumberWords
+			}
+			currentSentenceNumberWords = 0
+		} else if (letter === ' ') {
+			currentSentenceNumberWords++
+		}
+		
+	}
+
+	return longestSentence
 }
 
 const tests = [
