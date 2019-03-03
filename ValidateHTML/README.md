@@ -10,33 +10,96 @@ The following characters are special
 -   `[` is the opening symbol for `]`
 -   `{` is the opening symbol for `}`
 
+## Signature
+
+`validateHTML(string inputStr)`
+
+## Tests
+
 Use the following tests cases to verify your input
 
 ```javascript
 var tests = [
-	{ str: null, expected: true }, // null case
-	{ expected: true }, // undefined case; could use { str: undefined, expected: true }
-	{ str: '', expected: true },
-	{ str: 'a', expected: true },
-	{ str: '<', expected: false },
-	{ str: '>', expected: false },
-	{ str: '><', expected: false },
-	{ str: '<<', expected: false },
-	{ str: '>>', expected: false },
-	{ str: '<>', expected: true },
-	{ str: '<a', expected: false },
-	{ str: 'a>', expected: false },
-	{ str: '<a>', expected: true },
-	{ str: '<<a>', expected: false },
-	{ str: '<<a>>', expected: true },
-	{ str: '<{a}>', expected: true },
-	{ str: '<<{a}>>', expected: true },
-	{ str: '<<{a>}>', expected: false },
-	{ str: '<<{a>>}', expected: false }
+	{
+		expected: true,
+		input: null
+	}, // null case
+	{
+		expected: true
+	}, // undefined case; could use { input: undefined, expected: true }
+	{
+		expected: true,
+		input: ''
+	},
+	{
+		expected: true,
+		input: 'a'
+	},
+	{
+		expected: false,
+		input: '<'
+	},
+	{
+		expected: false,
+		input: '>'
+	},
+	{
+		expected: false,
+		input: '><'
+	},
+	{
+		expected: false,
+		input: '<<'
+	},
+	{
+		expected: false,
+		input: '>>'
+	},
+	{
+		expected: true,
+		input: '<>'
+	},
+	{
+		expected: false,
+		input: '<a'
+	},
+	{
+		expected: false,
+		input: 'a>'
+	},
+	{
+		expected: true,
+		input: '<a>'
+	},
+	{
+		expected: false,
+		input: '<<a>'
+	},
+	{
+		expected: true,
+		input: '<<a>>'
+	},
+	{
+		expected: true,
+		input: '<{a}>'
+	},
+	{
+		expected: true,
+		input: '<<{a}>>'
+	},
+	{
+		expected: false,
+		input: '<<{a>}>'
+	},
+	{
+		expected: false,
+		input: '<<{a>>}'
+	}
 ]
-tests.forEach(function(curr) {
-	var result = curr.str ? curr.str.isValid() : isValid(curr.str)
-	console.log('Is "' + curr.str + '" valid? ', result)
+tests.forEach(curr => {
+	var result = validateHTML(curr.input)
+	console.log(`Is "${curr.input}" valid? `, result)
+
 	if (result === curr.expected) {
 		console.log('Pass')
 	} else {
