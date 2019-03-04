@@ -4,10 +4,11 @@
 	"description": "A collection of coding exercises, tests, and solutions",
 	"main": "index.js",
 	"scripts": {
-		"all": "npm run acronym && npm run fibonacci && npm run longestSentence",
+		"all": "npm run acronym && npm run fibonacci && npm run longestSentence npm run validateHTML",
 		"acronym": "node ./Acronym/acronym.js",
 		"fibonacci": "node ./Fibonacci/fibonacci.js",
 		"longestSentence": "node ./LongestSentence/longestSentence.js",
+		"validateHTML": "node ./ValidateHTML/validateHTML.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
