@@ -1,40 +1,49 @@
 const testRunner = require('../test-runner')
 
+const SPECIAL_CHARACTER_MAP = {
+	'<': '>',
+	'[': ']',
+	'{': '}'
+}
+
+const isBreaker = searchKey => {
+	const tokens = Object.keys(SPECIAL_CHARACTER_MAP)
+	const breakers = tokens.map(curr => SPECIAL_CHARACTER_MAP[curr])
+	return breakers.indexOf(searchKey) > -1
+}
+
+const isInteresting = searchKey => {
+	const tokens = Object.keys(SPECIAL_CHARACTER_MAP)
+	return tokens.indexOf(searchKey) > -1
+}
+
 const validateHTML = inputStr => {
-	const specMap = {
-		'<': '>',
-		'[': ']',
-		'{': '}'
-	}
-	const interestedTokens = Object.keys(specMap)
-	const breakers = interestedTokens.map(function(curr) {
-		return specMap[curr]
-	})
-	let leftInd = 0
+	inputStr = inputStr || ''
+
 	if (inputStr.length === 0) {
 		return true
 	}
-	if (inputStr.length === 1 &&
-		(interestedTokens.indexOf(inputStr[leftInd]) > -1 ||
-			breakers.indexOf(inputStr[leftInd]) > -1)) {
-		// short circuit for only opens (e.g. '<', '>')
+	if (
+		inputStr.length === 1 &&
+		(isInteresting(inputStr[0]) || isBreaker(inputStr[0]))
+	) {
 		return false
 	}
+	let leftInd = 0
 	let rightInd = inputStr.length - 1
+
 	while (leftInd < rightInd) {
 		const trigger = inputStr[leftInd]
-		if (breakers.indexOf(trigger) > -1) {
+		if (isBreaker(trigger)) {
 			return false
 		}
-		if (interestedTokens.indexOf(trigger) > -1) {
-			// found a trigger
+		// found a trigger
+		if (isInteresting(trigger)) {
 			let foundMatch = false
 			while (rightInd > leftInd && !foundMatch) {
-				// start at the right/outside to search
-				const comp = inputStr[rightInd]
-				if (comp === specMap[trigger]) {
-					// is it the match?
-					foundMatch = true
+				const comp = inputStr[rightInd] // start at the right/outside to search
+				if (comp === SPECIAL_CHARACTER_MAP[trigger]) {
+					foundMatch = true // is it the match?
 				}
 				rightInd--
 			}
@@ -42,16 +51,16 @@ const validateHTML = inputStr => {
 				return false // we couldn't close the current search
 			}
 		}
+		// short circuit for even matches (e.g. '<>')
 		if (leftInd === rightInd) {
-			// short circuit for even matches (e.g. '<>')
 			break
 		}
 		leftInd++ // either we jumped out early for no match, or we're still going, so advance
 	}
-	return leftInd === rightInd && breakers.indexOf(inputStr[rightInd]) === -1
+	return leftInd === rightInd && !isBreaker(inputStr[rightInd])
 }
 
-var tests = [
+const tests = [
 	{
 		expected: true,
 		input: null
