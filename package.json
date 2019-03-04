@@ -8,7 +8,7 @@
 		"fibonacci": "node ./Fibonacci/fibonacci.js",
 		"longestSentence": "node ./LongestSentence/longestSentence.js",
 		"validateHTML": "node ./ValidateHTML/validateHTML.js",
-		"test": "npm run acronym && npm run fibonacci && npm run longestSentence npm run validateHTML"
+		"test": "npm run acronym && npm run fibonacci && npm run longestSentence && npm run validateHTML"
 	},
 	"repository": {
 		"type": "git",
