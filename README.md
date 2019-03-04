@@ -9,6 +9,6 @@ This repository is a storage place for various coding exercises
 
 ## Running JavaScript Exercises
 
-* `npm run all` - Run all algorithm test cases
+* `npm test` - Run all algorithm test cases
 * `npm run acronym` - Run the Acronym test cases
 * `npm run fibonacci` - Run the Fibonacci test cases
