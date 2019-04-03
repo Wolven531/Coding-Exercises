@@ -111,6 +111,17 @@ const tests = [
 		}
 	},
 ]
-// TODO: create custom test runner for multi-param tests
+
+const failures = []
+
+tests.forEach(test => {
+	const result = brokenBridge(test.input.bridge, test.input.planks)
+
+	if (result === test.expected) {
+		return
+	}
+	failures.push(` FAILED\n\tinput "${JSON.stringify(test.input)}"\n\toutput "${result}"\n\texpected "${test.expected}"`)
+})
+
 // const failures = testRunner.runTests(tests, brokenBridge)
-// testRunner.printTestResults(tests, failures)
+testRunner.printTestResults(tests, failures)
