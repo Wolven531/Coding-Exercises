@@ -33,15 +33,15 @@ Write a function that
 ## Examples
 
 ```javascript
-canPatch([1, 0, 0, 0, 0, 0, 0, 1], [5, 1, 2]) => true
+brokenBridge([1, 0, 0, 0, 0, 0, 0, 1], [5, 1, 2]) => true
 // You can use the 5 plank to transform the 6 hole to a 1 hole
 // Leftover planks [1, 2] are okay
 
-canPatch([1, 0, 0, 0, 0, 0, 0, 1], [4, 1, 2, 3, 4]) => false
+brokenBridge([1, 0, 0, 0, 0, 0, 0, 1], [4, 1, 2, 3, 4]) => false
 // None of your planks are long enough (you cannot combine them)
 
-canPatch([1, 0, 0, 1, 1, 0, 0, 0, 1], [1, 2]) => true
-canPatch([1, 0, 0, 1, 1, 0, 0, 0, 1], [1, 1]) => false
+brokenBridge([1, 0, 0, 1, 1, 0, 0, 0, 1], [1, 2]) => true
+brokenBridge([1, 0, 0, 1, 1, 0, 0, 0, 1], [1, 1]) => false
 ```
 
 ### Notes
