@@ -6,7 +6,7 @@
   - Develop the function in a recursive manner
   - Develop the function using dynamic programming ([Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming))
 
-## Examples:
+## Examples
 
 - fibo(0) === 0
 - fibo(1) === 1

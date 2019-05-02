@@ -1,17 +1,19 @@
 # Soduku
 
-## Challenge 1:
+## Challenge 1
+
 - The function signature: validate(sudoku)
 - Given an array of arrays (example below) that represents a sudoku, determine whether or not the sudoku is valid.
   - Each row horizontally must contain no duplicates
   - Each column vertically must contain no duplicates
   - Each box must contain no duplicates
 
-## Challenge 2:
+## Challenge 2
+
 - The function signature: generate()
 - Create a function that will generate a valid sudoku representation. The same validation rules apply as above.
 
-## Examples:
+## Examples
 
 Example sudoku (valid): validate(sudoku) === true
 ```javascript

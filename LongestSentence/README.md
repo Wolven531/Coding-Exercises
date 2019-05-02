@@ -9,7 +9,7 @@
     - Zero length words are not counted ('' should not add to the number of words in a sentence)
     - The function returns an int representing the number of words in the longest sentence
 
-## Examples:
+## Examples
 
 - longestSen('A test sentence. Does it work properly?') === 4
 - longestSen('A curveball..Very strange . x x' === 2

@@ -9,7 +9,7 @@
   - The final result should have no spaces
   - Leave all non-alphabetic characters besides space as they are
 
-## Examples:
+## Examples
 
 - acro('') === ''
 - acro('And this is how the world ends. Not with a bang, but a whimper') === 'THWE.NWB,BW'
