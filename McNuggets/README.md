@@ -12,3 +12,15 @@ McNuggets are sold in boxes that consist of four distinct quantities: four (`4`)
 
 - isMcNug(10) === true
 - isMcNug(7) === false
+
+## Challenge 2 - McNugget Number Generator
+
+- The function signature: `mcNugs(integer nDigits)`
+- Given an integer value greater than or equal to one named `nDigits` (i.e. `nDigits >= 1`), return the first `nDigits` McNuggets numbers
+
+### Challenge 2 Examples
+
+- mcNugs(1) === [4]
+- mcNugs(2) === [4,6]
+- mcNugs(4) === [4,6,8,9]
+- mcNugs(8) === [4,6,8,9,10,12,13,14]
