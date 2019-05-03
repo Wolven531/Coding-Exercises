@@ -8,8 +8,9 @@
 		"brokenBridge": "node ./BrokenBridge/broken_bridge.js",
 		"fibonacci": "node ./Fibonacci/fibonacci.js",
 		"longestSentence": "node ./LongestSentence/longestSentence.js",
+		"mcNuggets": "node ./McNuggets/mcnuggets.js",
 		"validateHTML": "node ./ValidateHTML/validateHTML.js",
-		"test": "npm run acronym && npm run brokenBridge && npm run fibonacci && npm run longestSentence && npm run validateHTML"
+		"test": "npm run acronym && npm run brokenBridge && npm run fibonacci && npm run longestSentence && npm run mcNuggets && npm run validateHTML"
 	},
 	"repository": {
 		"type": "git",
