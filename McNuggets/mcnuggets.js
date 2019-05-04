@@ -33,6 +33,26 @@ const tests = [
 		input: 10
 	},
 	{
+		expected: true,
+		input: 13
+	},
+	{
+		expected: true,
+		input: 19
+	},
+	{
+		expected: true,
+		input: 26
+	},
+	{
+		expected: true,
+		input: 39
+	},
+	{
+		expected: true,
+		input: 8
+	},
+	{
 		expected: false,
 		input: 1
 	},
@@ -47,6 +67,10 @@ const tests = [
 	{
 		expected: true,
 		input: 100
+	},
+	{
+		expected: true,
+		input: 109
 	},
 	{
 		expected: true,
