@@ -1,7 +1,30 @@
 const testRunner = require('../test-runner')
 
+const MCNUGGET_SIZES = [20, 9, 6, 4]
+// const MCNUGGET_SIZES = [4, 6, 9, 20]
+
 const isMcNug = testNumber => {
-	return false
+	// NOTE: number is too small
+	if (testNumber < 4) {
+		return false
+	}
+
+	// NOTE: if any sizes fit nicely
+	if (MCNUGGET_SIZES.some(mcNuggetNum => testNumber % mcNuggetNum === 0)) {
+		return true
+	}
+
+	let runningRemainder = testNumber
+
+	MCNUGGET_SIZES.forEach(mcNuggetNum => {
+		// console.log(`considering runningRemainder=${runningRemainder} mcNuggetNum=${mcNuggetNum}`)
+
+		while (runningRemainder >= mcNuggetNum) {
+			runningRemainder -= mcNuggetNum
+		}
+	})
+
+	return runningRemainder === 0
 }
 
 const tests = [
