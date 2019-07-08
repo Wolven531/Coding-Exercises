@@ -2,11 +2,9 @@
     @param string input_str The string to attempt to convert to acronym
     @returns string The result of converting the input string to an acronym
 '''
-# @staticmethod
 def acro(input_str: str):
     return input_str
 
-# @staticmethod
 def run_tests():
     test_one_expected = ''
     test_one_result = acro('')
