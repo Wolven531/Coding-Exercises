@@ -15,3 +15,4 @@ def acro(input_str: str):
 test_one_expected = ''
 test_one_result = acro('')
 print(f'acro of "" = "{test_one_result}", expected "{test_one_expected}"')
+assert test_one_result == test_one_expected, f'test one failed; expected "{test_one_expected}"'
