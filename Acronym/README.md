@@ -12,6 +12,7 @@
 ## Examples
 
 - acro('') === ''
+- acro('.') === '.'
 - acro('And this is how the world ends. Not with a bang, but a whimper') === 'THWE.NWB,BW'
 - acro('The On And Or At It') === ''
 - acro('Thank God it's Friday!') === 'TGIF!'
