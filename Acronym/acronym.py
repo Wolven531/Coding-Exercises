@@ -5,6 +5,10 @@
 def acro(input_str: str):
 	return input_str
 
+'''
+	@param list<tuple(input, expected_output)> tests A list of tuples, each containing an input and expected output
+	@returns None
+'''
 def run_tests(tests):
 	for test_num, test in enumerate(tests, start=1):
 		test_input = test[0]
