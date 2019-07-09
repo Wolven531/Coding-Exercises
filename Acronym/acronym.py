@@ -37,7 +37,8 @@ def run_tests(tests):
 tests = [
 	('', ''),
 	('.', '.'),
-	('And this is how the world ends. Not with a bang, but a whimper', 'THWE.NWB,BW')
+	('And this is how the world ends. Not with a bang, but a whimper', 'THWE.NWB,BW'),
+	('The On And Or At It', '')
 ]
 
 run_tests(tests)
