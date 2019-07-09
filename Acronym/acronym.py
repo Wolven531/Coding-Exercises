@@ -1,4 +1,4 @@
-non_acro_words = ['and', 'is', 'the', 'a']
+non_acro_words = ['a', 'and', 'at', 'in', 'is', 'it', 'of', 'on', 'or', 'the']
 symbols_to_keep = [',', '.']
 
 '''
