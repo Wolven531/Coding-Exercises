@@ -13,9 +13,7 @@ def acro(input_str):
 	result = ''
 
 	for word in words:
-		if (len(word) < 1):
-			continue
-		if (word.lower() in non_acro_words):
+		if (len(word) < 1 or word.lower() in non_acro_words):
 			continue
 		if (len(word) > 1):
 			result += word[0].capitalize()
