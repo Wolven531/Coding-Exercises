@@ -39,7 +39,8 @@ tests = [
 	('.', '.'),
 	('And this is how the world ends. Not with a bang, but a whimper', 'THWE.NWB,BW'),
 	('The On And Or At It', ''),
-	("Thank God it's Friday!", 'TGIF!')
+	("Thank God it's Friday!", 'TGIF!'),
+	('    .    ', '.')
 ]
 
 run_tests(tests)
