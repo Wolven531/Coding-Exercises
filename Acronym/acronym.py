@@ -1,5 +1,5 @@
 non_acro_words = ['a', 'and', 'at', 'in', 'is', 'it', 'of', 'on', 'or', 'the']
-symbols_to_keep = [',', '.']
+symbols_to_keep = [',', '.', '!']
 
 '''
 	@param string input_str The string to attempt to convert to acronym
@@ -38,7 +38,8 @@ tests = [
 	('', ''),
 	('.', '.'),
 	('And this is how the world ends. Not with a bang, but a whimper', 'THWE.NWB,BW'),
-	('The On And Or At It', '')
+	('The On And Or At It', ''),
+	("Thank God it's Friday!", 'TGIF!')
 ]
 
 run_tests(tests)
