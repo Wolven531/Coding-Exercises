@@ -33,6 +33,8 @@ def run_tests(tests):
 		test_result = acro(test_input)
 		print(f'{test_num}.) acro("{test_input}") = "{test_result}"')
 		assert test_result == test_expected, f'test {test_num} failed; expected "{test_expected}"'
+	num_tests = len(tests)
+	print(f'\nAll {num_tests} tests passed!\n')
 
 tests = [
 	('', ''),
