@@ -1,10 +1,47 @@
-def longest_sentence(input_str):
+sentence_delims = ['.', '?', '!']
+
+def get_next_sentence(input_str):
+	sentence = ''
+	char_index = 0
+
 	if len(input_str) < 1:
-		return 0
+		return (sentence, char_index)
 
-	words = input_str.split(' ')
+	for char in input_str:
+		if char in sentence_delims:
+			break
+		else:
+			sentence += char
+		char_index += 1
 
-	return len(words)
+	sentence = sentence.strip()
+	print('returning sentence="' + sentence + '" and char_index=' + str(char_index))
+
+	return (sentence, char_index)
+
+
+def longest_sentence(input_str):
+	longest = 0
+	if len(input_str) < 1:
+		return longest
+
+	sentence_info = get_next_sentence(input_str)
+
+	while sentence_info[0] is not '':
+		words = sentence_info[0].split(' ')
+		print('considering s=' + sentence_info[0] + ', words=' + ','.join(words))
+		sentence_length = len(words)
+
+		if sentence_length > longest:
+			longest = sentence_length
+
+		remaining = input_str[sentence_info[1] + 1:]
+
+		print('remaining="' + remaining + '"')
+
+		sentence_info = get_next_sentence(remaining)
+
+	return longest
 
 def run_tests(tests):
 	for test_num, test in enumerate(tests, start=1):
@@ -17,9 +54,10 @@ def run_tests(tests):
 	print(f'\nAll {num_tests} tests passed!\n')
 
 tests = [
-	('A test sentence. Does it work properly?', 4),
-	('A curveball..Very strange . x x', 2),
-	(' Some Test? With... Edge Cases! ', 2),
+	# ('A test sentence. Does it work properly?', 4),
+	# ('A curveball..Very strange . x x', 2),
+	# (' Some Test? With... Edge Cases! ', 2),
+	('asdf', 1),
 	('', 0),
 	(' ', 0)
 ]
