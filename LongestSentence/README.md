@@ -12,7 +12,7 @@
 ## Examples
 
 - longestSen('A test sentence. Does it work properly?') === 4
-- longestSen('A curveball..Very strange . x x' === 2
-- longestSen(' Some Test? With... Edge Cases! ' === 2
+- longestSen('A curveball..Very strange . x x') === 2
+- longestSen(' Some Test? With... Edge Cases! ') === 2
 - longestSen('') === 0
 - longestSen(' ') === 0
