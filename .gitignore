@@ -39,3 +39,6 @@ jspm_packages
 
 # Mac files
 .DS_Store
+
+# VSCode python objects
+.vscode/.ropeproject/*
