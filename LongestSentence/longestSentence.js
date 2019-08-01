@@ -23,26 +23,11 @@ const longestSen = inputStr => {
 }
 
 const tests = [
-	{
-		expected: 4,
-		input: 'A test sentence. Does it work properly?'
-	},
-	{
-		expected: 2,
-		input: 'A curveball..Very strange . x x'
-	},
-	{
-		expected: 2,
-		input: ' Some Test? With... Edge Cases! '
-	},
-	{
-		expected: 0,
-		input: ''
-	},
-	{
-		expected: 0,
-		input: ' '
-	}
+	{ expected: 4, input: 'A test sentence. Does it work properly?' },
+	{ expected: 2, input: 'A curveball..Very strange . x x' },
+	{ expected: 2, input: ' Some Test? With... Edge Cases! ' },
+	{ expected: 0, input: '' },
+	{ expected: 0, input: ' ' }
 ]
 
 const failures = testRunner.runTests(tests, longestSen)
