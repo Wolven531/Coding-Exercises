@@ -7,8 +7,17 @@ const longestSen = inputStr => {
 
 	let currentSentenceNumberWords = 0
 	let longestSentence = 0
+	
+	const letters = inputStr.split('')
 
-	inputStr.split('').forEach(letter => {
+	if (letters.length === 0) {
+		return 0
+	}
+	if (!letters.some(letter => SENTENCE_DELIMITERS.indexOf(letter) > -1)) {// NO delimiters, it is one sentence
+		return 1
+	}
+
+	letters.forEach(letter => {
 		if (SENTENCE_DELIMITERS.indexOf(letter) > -1) {
 			if (currentSentenceNumberWords > longestSentence) {
 				longestSentence = currentSentenceNumberWords
