@@ -1,26 +1,21 @@
 sentence_delims = ['.', '?', '!']
 
-def next_sentence(input_str):
+def next_sen(input_str):
 	sentence = ''
 	remaining = ''
+	remaining_start = 0
 
 	if len(input_str) < 1:
 		return (sentence, remaining)
-
-	remaining_start = 0
 
 	for char in input_str:
 		remaining_start += 1
 		if char in sentence_delims:
 			remaining = input_str[remaining_start:]
 			break
-		else:
-			sentence += char
+		sentence += char
 
-	sentence = sentence.strip()
-
-	return (sentence, remaining)
-
+	return (sentence.strip(), remaining)
 
 def longest_sentence(input_str):
 	longest = 0
@@ -28,7 +23,7 @@ def longest_sentence(input_str):
 	if len(input_str) < 1:
 		return longest
 
-	sentence_info = next_sentence(input_str)
+	sentence_info = next_sen(input_str)
 
 	while sentence_info[0] is not '':
 		words = sentence_info[0].split(' ')
@@ -37,7 +32,7 @@ def longest_sentence(input_str):
 		if sentence_length > longest:
 			longest = sentence_length
 
-		sentence_info = next_sentence(sentence_info[1])
+		sentence_info = next_sen(sentence_info[1])
 
 	return longest
 
