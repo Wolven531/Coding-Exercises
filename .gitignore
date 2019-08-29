@@ -44,3 +44,4 @@ jspm_packages
 .vscode/.ropeproject/*
 
 CSharpCodingExercises/.vs/
+CSharpCodingExercises/CSharpCodingExercises/obj/
