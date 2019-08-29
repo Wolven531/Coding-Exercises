@@ -42,3 +42,5 @@ jspm_packages
 
 # VSCode python objects
 .vscode/.ropeproject/*
+
+CSharpCodingExercises/.vs/
