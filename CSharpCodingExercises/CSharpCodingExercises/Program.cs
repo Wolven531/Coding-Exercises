@@ -14,6 +14,15 @@ namespace CSharpCodingExercises
 
             Console.WriteLine("Running FizzBuzz...");
             FizzBuzz.Execute();
+
+            Console.WriteLine("Running factors of 669...");
+            PrimeNumbers.Factors(669);
+            Console.WriteLine("Running factors of 20...");
+            PrimeNumbers.Factors(20);
+            Console.WriteLine("Running factors of 3...");
+            PrimeNumbers.Factors(3);
+            Console.WriteLine("Running factors of 2...");
+            PrimeNumbers.Factors(2);
         }
     }
 }
