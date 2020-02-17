@@ -1,7 +1,7 @@
 const testRunner = require('../test-runner')
 
-const MCNUGGET_SIZES = [20, 9, 6, 4]
-// const MCNUGGET_SIZES = [4, 6, 9, 20]
+// NOTE: favor composite values first
+const MCNUGGET_SIZES = [20, 4, 9, 6]
 
 const isMcNug = testNumber => {
 	// NOTE: number is too small
