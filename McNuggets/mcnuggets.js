@@ -14,9 +14,15 @@ const isMcNug = testNumber => {
 		return true
 	}
 
+	let orderedNugs = [...MCNUGGET_SIZES]
+
+	if (testNumber > 20) {
+		orderedNugs.sort((a, b) => b - a)
+	}
+
 	let runningRemainder = testNumber
 
-	MCNUGGET_SIZES.forEach(mcNuggetNum => {
+	orderedNugs.forEach(mcNuggetNum => {
 		if (runningRemainder === 0) {
 			return
 		}
