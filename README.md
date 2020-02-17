@@ -14,4 +14,5 @@ This repository is a storage place for various coding exercises
 * `npm run brokenBridge` - Run the Broken Bridge test cases
 * `npm run fibonacci` - Run the Fibonacci test cases
 * `npm run longestSentence` - Run the Longest Sentence test cases
+* `npm run mcNuggets` - Run the McNuggets test cases
 * `npm run validateHTML` - Run the Validate HTML test cases
