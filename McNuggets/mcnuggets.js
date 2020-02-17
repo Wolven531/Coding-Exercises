@@ -17,9 +17,10 @@ const isMcNug = testNumber => {
 	let runningRemainder = testNumber
 
 	MCNUGGET_SIZES.forEach(mcNuggetNum => {
-		// console.log(`considering runningRemainder=${runningRemainder} mcNuggetNum=${mcNuggetNum}`)
-
-		while (runningRemainder >= mcNuggetNum) {
+		if (runningRemainder === 0) {
+			return
+		}
+		if (mcNuggetNum <= runningRemainder ) {
 			runningRemainder -= mcNuggetNum
 		}
 	})
