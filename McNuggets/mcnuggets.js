@@ -1,7 +1,7 @@
 const testRunner = require('../test-runner')
 
-// NOTE: favor composite values first
-const MCNUGGET_SIZES = [20, 4, 9, 6]
+// NOTE: ensure every McNug value up to and including 20 is present
+const MCNUGGET_SIZES = [20, 19, 18, 17, 16, 15, 14, 13, 12, 10, 9, 8, 6, 4]
 
 const isMcNug = testNumber => {
 	// NOTE: number is too small
@@ -14,19 +14,13 @@ const isMcNug = testNumber => {
 		return true
 	}
 
-	let orderedNugs = [...MCNUGGET_SIZES]
-
-	if (testNumber > 20) {
-		orderedNugs.sort((a, b) => b - a)
-	}
-
 	let runningRemainder = testNumber
 
-	orderedNugs.forEach(mcNuggetNum => {
+	MCNUGGET_SIZES.forEach(mcNuggetNum => {
 		if (runningRemainder === 0) {
 			return
 		}
-		if (mcNuggetNum <= runningRemainder ) {
+		while (runningRemainder >= mcNuggetNum ) {
 			runningRemainder -= mcNuggetNum
 		}
 	})
